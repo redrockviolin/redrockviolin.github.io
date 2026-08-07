@@ -15,7 +15,6 @@
   --muted:#5f5a53;
   --rust:#a5442e;
   --soft:#efe7dc;
-  --olive:#65674e;
   --line:#d9cdbf;
 }
 *{box-sizing:border-box}
@@ -30,41 +29,49 @@ body{
 a{color:inherit}
 img{display:block;max-width:100%}
 
+/* ---------- TOP / HEADER ---------- */
+.top-shell{
+  background:var(--cream);
+}
 header{
-  min-height:126px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:40px;
-  padding:12px clamp(28px,7vw,120px);
-  background:var(--paper);
-  border-bottom:1px solid rgba(217,205,191,.55);
+  padding:22px clamp(34px,7vw,120px) 10px;
+  min-height:180px;
+  background:transparent;
 }
-.logo{display:flex;align-items:center;text-decoration:none}
+.logo{
+  display:block;
+  text-decoration:none;
+  flex:0 0 auto;
+}
 .logo img{
-  width:290px;
+  width:300px;
   height:auto;
-  object-fit:contain;
 }
 nav{
   display:flex;
   align-items:center;
-  gap:44px;
+  gap:52px;
+  padding-top:4px;
   font-family:"Libre Caslon Display",Georgia,serif;
-  font-size:18px;
+  font-size:20px;
   white-space:nowrap;
 }
 nav a{text-decoration:none}
 nav a:hover{color:var(--rust)}
 
+/* ---------- HERO ---------- */
 .hero{
   display:grid;
-  grid-template-columns:.95fr 1.05fr;
-  min-height:500px;
+  grid-template-columns:.92fr 1.08fr;
+  min-height:510px;
   background:var(--cream);
 }
 .hero-copy{
-  padding:76px 52px 50px clamp(36px,8vw,130px);
+  padding:58px 52px 48px clamp(34px,7vw,120px);
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -76,37 +83,38 @@ h1,h2,h3{
   margin:0;
 }
 h1{
-  font-size:clamp(50px,5vw,72px);
+  font-size:clamp(50px,4.9vw,72px);
   line-height:1.05;
-  max-width:690px;
+  max-width:680px;
 }
 .hero-copy p{
   max-width:560px;
-  margin:34px 0 0;
+  margin:30px 0 0;
   font-size:20px;
-  line-height:1.7;
+  line-height:1.72;
   color:#4b4741;
 }
 .arrow{
-  margin-top:52px;
+  margin-top:42px;
   color:var(--rust);
   font-size:34px;
   text-decoration:none;
   width:max-content;
 }
 .hero-image{
-  background:url('assets/hero-v6.jpg') center/cover no-repeat;
-  min-height:500px;
+  background:url('assets/hero-v9.jpg') center/cover no-repeat;
+  min-height:510px;
 }
 
+/* ---------- INTRO / CTA ---------- */
 .intro{
   display:grid;
-  grid-template-columns:.8fr 1.2fr;
+  grid-template-columns:.78fr 1.22fr;
   min-height:360px;
   border-top:1px solid rgba(217,205,191,.55);
 }
 .intro-copy{
-  padding:62px 52px 62px clamp(36px,8vw,130px);
+  padding:62px 48px 62px clamp(34px,7vw,120px);
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -137,12 +145,13 @@ h1{
   font-weight:500;
 }
 .music-image{
-  background:url('assets/music-v6.jpg') center/cover no-repeat;
+  background:url('assets/music-v9.jpg') center/cover no-repeat;
   min-height:360px;
 }
 
+/* ---------- REST OF SITE ---------- */
 .section{
-  padding:92px clamp(36px,8vw,130px);
+  padding:92px clamp(34px,7vw,120px);
 }
 .section.soft{background:var(--soft)}
 .section.dark{background:var(--charcoal);color:white}
@@ -181,31 +190,26 @@ h1{
   color:var(--muted);
 }
 
-.lesson-grid,
-.approach-grid{
+.lesson-grid,.approach-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   margin-top:48px;
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
 }
-.lesson-grid article,
-.approach-grid article{
+.lesson-grid article,.approach-grid article{
   padding:30px 28px 30px 0;
 }
-.lesson-grid article+article,
-.approach-grid article+article{
+.lesson-grid article+article,.approach-grid article+article{
   padding-left:28px;
   border-left:1px solid var(--line);
 }
-.lesson-grid h3,
-.approach-grid h3{
+.lesson-grid h3,.approach-grid h3{
   font-size:28px;
   line-height:1.2;
   margin-bottom:10px;
 }
-.lesson-grid p,
-.approach-grid p{
+.lesson-grid p,.approach-grid p{
   color:var(--muted);
   margin:0;
 }
@@ -222,52 +226,25 @@ h1{
   background:var(--paper);
   padding:30px;
 }
-.location-grid h3{
-  font-size:26px;
-  margin-bottom:8px;
-}
-.location-grid p{
-  color:var(--muted);
-  margin:0;
-}
+.location-grid h3{font-size:26px;margin-bottom:8px}
+.location-grid p{color:var(--muted);margin:0}
 
-.studio-note{
-  max-width:850px;
-}
-.studio-note p{
-  max-width:700px;
-  font-size:18px;
-}
+.studio-note{max-width:850px}
+.studio-note p{max-width:700px;font-size:18px}
 
-.faq-list{
-  max-width:900px;
-  margin-top:28px;
-}
-details{
-  border-top:1px solid var(--line);
-  padding:20px 0;
-}
+.faq-list{max-width:900px;margin-top:28px}
+details{border-top:1px solid var(--line);padding:20px 0}
 details:last-child{border-bottom:1px solid var(--line)}
-summary{
-  cursor:pointer;
-  font-size:18px;
-  font-weight:500;
-}
-details p{
-  max-width:720px;
-  color:var(--muted);
-}
+summary{cursor:pointer;font-size:18px;font-weight:500}
+details p{max-width:720px;color:var(--muted)}
 
 .contact{
   background:var(--rust);
   color:white;
-  padding:90px clamp(36px,8vw,130px);
+  padding:90px clamp(34px,7vw,120px);
 }
 .contact .kicker{color:#efc5b7}
-.contact p{
-  max-width:650px;
-  font-size:18px;
-}
+.contact p{max-width:650px;font-size:18px}
 .contact a.email{
   display:inline-block;
   margin-top:22px;
@@ -276,35 +253,32 @@ details p{
   text-decoration:none;
   border-bottom:1px solid rgba(255,255,255,.5);
 }
-.contact .small{
-  font-size:14px;
-  opacity:.78;
-  margin-top:18px;
-}
+.contact .small{font-size:14px;opacity:.78;margin-top:18px}
 
 footer{
   display:flex;
   justify-content:space-between;
   gap:20px;
-  padding:24px clamp(36px,7vw,130px);
+  padding:24px clamp(34px,7vw,120px);
   font-size:11px;
   letter-spacing:.1em;
   text-transform:uppercase;
   color:var(--muted);
 }
 
+/* ---------- MOBILE ---------- */
 @media(max-width:850px){
   header{
-    min-height:92px;
-    padding:10px 18px;
-    gap:18px;
+    min-height:120px;
+    padding:14px 20px 8px;
+    gap:20px;
   }
-  .logo img{width:190px}
+  .logo img{width:200px}
   nav{gap:16px;font-size:14px}
   .hero,.intro,.two-col,.location-grid{
     grid-template-columns:1fr;
   }
-  .hero-copy{padding:58px 24px 44px}
+  .hero-copy{padding:54px 24px 42px}
   h1{font-size:46px}
   .hero-copy p{font-size:18px}
   .hero-image{min-height:320px}
@@ -313,174 +287,180 @@ footer{
   .music-image{min-height:300px}
   .section,.contact{padding:68px 24px}
   .two-col{gap:28px}
-  .credential-row,.lesson-grid,.approach-grid{
-    grid-template-columns:1fr;
-  }
+  .credential-row,.lesson-grid,.approach-grid{grid-template-columns:1fr}
   .credential-row{gap:14px}
-  .lesson-grid article,
-  .approach-grid article,
-  .lesson-grid article+article,
-  .approach-grid article+article{
+  .lesson-grid article,.approach-grid article,
+  .lesson-grid article+article,.approach-grid article+article{
     padding:24px 0;
     border-left:0;
   }
-  .lesson-grid article+article,
-  .approach-grid article+article{
+  .lesson-grid article+article,.approach-grid article+article{
     border-top:1px solid var(--line);
   }
   .contact a.email{font-size:26px}
+}
+
+@media(max-width:650px){
+  header{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+  nav{
+    width:100%;
+    justify-content:space-between;
+    gap:10px;
+    padding-bottom:12px;
+  }
 }
 </style>
 </head>
 <body>
 
-<header>
-  <a class="logo" href="#top">
-    <img src="assets/logo-tight-v8.png" alt="Red Rock Violin">
-  </a>
-  <nav>
-    <a href="#jane">Meet Jane</a>
-    <a href="#lessons">Lessons</a>
-    <a href="#approach">Approach</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+<div class="top-shell">
+  <header>
+    <a class="logo" href="#top">
+      <img src="assets/logo-transparent-v9.png" alt="Red Rock Violin">
+    </a>
+    <nav>
+      <a href="#jane">Meet Jane</a>
+      <a href="#lessons">Lessons</a>
+      <a href="#approach">Approach</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<main id="top">
-  <section class="hero">
-    <div class="hero-copy">
-      <h1>Technique and joy<br>go hand in hand.</h1>
-      <p>When students connect with what they’re playing, they build confidence, artistry, and skills that last.</p>
-      <a class="arrow" href="#lessons" aria-label="Scroll down">↓</a>
-    </div>
-    <div class="hero-image" aria-hidden="true"></div>
-  </section>
-
-  <section class="intro" id="lessons">
-    <div class="intro-copy">
-      <p class="kicker">Private Violin Lessons</p>
-      <h2>Red Rock Violin</h2>
-      <p class="place">Summerlin, Las Vegas</p>
-      <div class="rule"></div>
-      <p class="ages">Ages 4–Adult</p>
-      <a class="button" href="mailto:redrockviolin@gmail.com?subject=Introductory%20Violin%20Lesson">Schedule an Introductory Lesson</a>
-    </div>
-    <div class="music-image" aria-hidden="true"></div>
-  </section>
-
-  <section class="section" id="jane">
-    <p class="kicker">Meet Jane</p>
-    <div class="two-col">
-      <div class="lead">Every student deserves an approach that’s as individual as they are.</div>
-      <div class="body-copy">
-        <p>My lessons are designed to build strong technique while nurturing confidence, creativity, and a genuine connection to music.</p>
-        <p>I’m a Suzuki-trained violinist with a Bachelor of Music from New York University and more than a decade of professional performance experience, including national touring as an acoustic and electric violinist.</p>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <h1>Technique and joy<br>go hand in hand.</h1>
+        <p>When students connect with what they’re playing, they build confidence, artistry, and skills that last.</p>
+        <a class="arrow" href="#lessons" aria-label="Scroll down">↓</a>
       </div>
+      <div class="hero-image" aria-hidden="true"></div>
+    </section>
+</div>
+
+<section class="intro" id="lessons">
+  <div class="intro-copy">
+    <p class="kicker">Private Violin Lessons</p>
+    <h2>Red Rock Violin</h2>
+    <p class="place">Summerlin, Las Vegas</p>
+    <div class="rule"></div>
+    <p class="ages">Ages 4–Adult</p>
+    <a class="button" href="mailto:redrockviolin@gmail.com?subject=Introductory%20Violin%20Lesson">Schedule an Introductory Lesson</a>
+  </div>
+  <div class="music-image" aria-hidden="true"></div>
+</section>
+
+<section class="section" id="jane">
+  <p class="kicker">Meet Jane</p>
+  <div class="two-col">
+    <div class="lead">Every student deserves an approach that’s as individual as they are.</div>
+    <div class="body-copy">
+      <p>My lessons are designed to build strong technique while nurturing confidence, creativity, and a genuine connection to music.</p>
+      <p>I’m a Suzuki-trained violinist with a Bachelor of Music from New York University and more than a decade of professional performance experience, including national touring as an acoustic and electric violinist.</p>
     </div>
+  </div>
+  <div class="credential-row">
+    <span>NYU Bachelor of Music</span>
+    <span>Suzuki-trained</span>
+    <span>10+ years professional performance</span>
+  </div>
+</section>
 
-    <div class="credential-row">
-      <span>NYU Bachelor of Music</span>
-      <span>Suzuki-trained</span>
-      <span>10+ years professional performance</span>
+<section class="section soft">
+  <p class="kicker">Lessons</p>
+  <div class="two-col">
+    <h2>Private lessons for ages 4–Adult.</h2>
+    <div class="body-copy">
+      <p>Young beginners, school-age students, teens, and adults are welcome. Lessons are personalized to each student’s goals, pace, personality, and musical interests.</p>
     </div>
-  </section>
+  </div>
 
-  <section class="section soft">
-    <p class="kicker">Lessons</p>
-    <div class="two-col">
-      <h2>Private lessons for ages 4–Adult.</h2>
-      <div class="body-copy">
-        <p>Young beginners, school-age students, teens, and adults are welcome. Lessons are personalized to each student’s goals, pace, personality, and musical interests.</p>
-      </div>
+  <div class="lesson-grid">
+    <article>
+      <h3>Young beginners</h3>
+      <p>A supportive introduction to the violin with clear foundations and age-appropriate pacing.</p>
+    </article>
+    <article>
+      <h3>School-age students</h3>
+      <p>Technique, musicianship, confidence, and repertoire that keeps students connected to the instrument.</p>
+    </article>
+    <article>
+      <h3>Adults</h3>
+      <p>Personalized lessons for first-time players and adults returning to the violin.</p>
+    </article>
+  </div>
+
+  <div class="location-grid">
+    <div>
+      <h3>At my studio in Summerlin</h3>
+      <p>Private instruction in a calm, dedicated home studio.</p>
     </div>
-
-    <div class="lesson-grid">
-      <article>
-        <h3>Young beginners</h3>
-        <p>A supportive introduction to the violin with clear foundations and age-appropriate pacing.</p>
-      </article>
-      <article>
-        <h3>School-age students</h3>
-        <p>Technique, musicianship, confidence, and repertoire that keeps students connected to the instrument.</p>
-      </article>
-      <article>
-        <h3>Adults</h3>
-        <p>Personalized lessons for first-time players and adults returning to the violin.</p>
-      </article>
+    <div>
+      <h3>In-home lessons</h3>
+      <p>Limited availability within a select service area.</p>
     </div>
+  </div>
+</section>
 
-    <div class="location-grid">
-      <div>
-        <h3>At my studio in Summerlin</h3>
-        <p>Private instruction in a calm, dedicated home studio.</p>
-      </div>
-      <div>
-        <h3>In-home lessons</h3>
-        <p>Limited availability within a select service area.</p>
-      </div>
-    </div>
-  </section>
+<section class="section" id="approach">
+  <p class="kicker">My Approach</p>
+  <h2>Thoughtful instruction, built around the individual.</h2>
+  <div class="approach-grid">
+    <article>
+      <h3>Strong Foundations</h3>
+      <p>Thoughtful instruction that builds confident, expressive playing.</p>
+    </article>
+    <article>
+      <h3>Meaningful Music</h3>
+      <p>Students connect with music they enjoy while developing skills that last.</p>
+    </article>
+    <article>
+      <h3>Individual Attention</h3>
+      <p>Every student deserves an approach that’s as individual as they are.</p>
+    </article>
+  </div>
+</section>
 
-  <section class="section" id="approach">
-    <p class="kicker">My Approach</p>
-    <h2>Thoughtful instruction, built around the individual.</h2>
+<section class="section dark">
+  <div class="studio-note">
+    <p class="kicker">The Studio</p>
+    <h2>A calm, dedicated space for focused learning and creativity.</h2>
+    <p>Lessons take place in a private Summerlin home studio designed to feel comfortable, welcoming, and focused. Updated studio photography will be added once the room is fully finished.</p>
+  </div>
+</section>
 
-    <div class="approach-grid">
-      <article>
-        <h3>Strong Foundations</h3>
-        <p>Thoughtful instruction that builds confident, expressive playing.</p>
-      </article>
-      <article>
-        <h3>Meaningful Music</h3>
-        <p>Students connect with music they enjoy while developing skills that last.</p>
-      </article>
-      <article>
-        <h3>Individual Attention</h3>
-        <p>Every student deserves an approach that’s as individual as they are.</p>
-      </article>
-    </div>
-  </section>
+<section class="section">
+  <p class="kicker">Good to Know</p>
+  <h2>A few common questions.</h2>
+  <div class="faq-list">
+    <details>
+      <summary>What ages do you teach?</summary>
+      <p>I welcome students ages 4 through adult, with a focus on beginner and intermediate players.</p>
+    </details>
+    <details>
+      <summary>Do you use the Suzuki method?</summary>
+      <p>My teaching is Suzuki-trained and classically grounded, while still being personalized to the individual student rather than limited to one method or book.</p>
+    </details>
+    <details>
+      <summary>Do you offer in-home lessons?</summary>
+      <p>Yes. In-home lessons are available within a limited service area, subject to scheduling and a travel fee.</p>
+    </details>
+    <details>
+      <summary>How do I get started?</summary>
+      <p>Email me with the student’s age, prior experience, and general availability. An introductory lesson is a great way to see if we’re a good fit.</p>
+    </details>
+  </div>
+</section>
 
-  <section class="section dark">
-    <div class="studio-note">
-      <p class="kicker">The Studio</p>
-      <h2>A calm, dedicated space for focused learning and creativity.</h2>
-      <p>Lessons take place in a private Summerlin home studio designed to feel comfortable, welcoming, and focused. Updated studio photography will be added once the room is fully finished.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <p class="kicker">Good to Know</p>
-    <h2>A few common questions.</h2>
-
-    <div class="faq-list">
-      <details>
-        <summary>What ages do you teach?</summary>
-        <p>I welcome students ages 4 through adult, with a focus on beginner and intermediate players.</p>
-      </details>
-      <details>
-        <summary>Do you use the Suzuki method?</summary>
-        <p>My teaching is Suzuki-trained and classically grounded, while still being personalized to the individual student rather than limited to one method or book.</p>
-      </details>
-      <details>
-        <summary>Do you offer in-home lessons?</summary>
-        <p>Yes. In-home lessons are available within a limited service area, subject to scheduling and a travel fee.</p>
-      </details>
-      <details>
-        <summary>How do I get started?</summary>
-        <p>Email me with the student’s age, prior experience, and general availability. An introductory lesson is a great way to see if we’re a good fit.</p>
-      </details>
-    </div>
-  </section>
-
-  <section class="contact" id="contact">
-    <p class="kicker">Contact</p>
-    <h2>Interested in lessons?</h2>
-    <p>Tell me a little about the student, their experience, and what you’re hoping to get from lessons.</p>
-    <a class="email" href="mailto:redrockviolin@gmail.com?subject=Violin%20Lesson%20Inquiry">redrockviolin@gmail.com</a>
-    <p class="small">Summerlin · Las Vegas, Nevada</p>
-  </section>
-</main>
+<section class="contact" id="contact">
+  <p class="kicker">Contact</p>
+  <h2>Interested in lessons?</h2>
+  <p>Tell me a little about the student, their experience, and what you’re hoping to get from lessons.</p>
+  <a class="email" href="mailto:redrockviolin@gmail.com?subject=Violin%20Lesson%20Inquiry">redrockviolin@gmail.com</a>
+  <p class="small">Summerlin · Las Vegas, Nevada</p>
+</section>
 
 <footer>
   <span>Red Rock Violin</span>
