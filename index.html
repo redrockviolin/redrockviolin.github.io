@@ -257,6 +257,50 @@ h1{
   max-width:680px;
 }
 
+
+/* ---------- STUDIO ---------- */
+.studio-section{
+  display:grid;
+  grid-template-columns:1.18fr .82fr;
+  min-height:560px;
+  background:var(--cream);
+}
+.studio-photo{
+  min-height:560px;
+  background:
+    linear-gradient(90deg,rgba(247,242,234,0) 82%,rgba(247,242,234,.12)),
+    url('assets/studio-v14.jpg') center/cover no-repeat;
+}
+.studio-copy{
+  padding:76px clamp(34px,7vw,100px) 76px 64px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.studio-copy h2{
+  font-size:clamp(40px,4vw,54px);
+  line-height:1.08;
+}
+.studio-copy > p:not(.kicker){
+  max-width:510px;
+  margin:26px 0 0;
+  font-size:18px;
+  line-height:1.75;
+  color:var(--muted);
+}
+.studio-details{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+  margin-top:34px;
+  padding-top:20px;
+  border-top:1px solid var(--line);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:var(--muted);
+}
+
 /* ---------- REST OF SITE ---------- */
 .section{
   padding:92px clamp(34px,7vw,120px);
@@ -376,6 +420,10 @@ footer{
 
 /* ---------- MOBILE ---------- */
 @media(max-width:850px){
+  .studio-section{grid-template-columns:1fr}
+  .studio-photo{min-height:390px}
+  .studio-copy{padding:54px 24px 60px}
+
   .jane-text-only{grid-template-columns:1fr;gap:30px}
 
   .jane-layout{grid-template-columns:1fr;gap:34px}
@@ -556,11 +604,16 @@ footer{
   </div>
 </section>
 
-<section class="section dark">
-  <div class="studio-note">
+<section class="studio-section" id="studio">
+  <div class="studio-photo" role="img" aria-label="Red Rock Violin teaching studio in Summerlin"></div>
+  <div class="studio-copy">
     <p class="kicker">The Studio</p>
     <h2>A calm, dedicated space for focused learning and creativity.</h2>
-    <p>Lessons take place in a private Summerlin home studio designed to feel comfortable, welcoming, and focused. Updated studio photography will be added once the room is fully finished.</p>
+    <p>Lessons take place in my private Summerlin home studio—a comfortable, welcoming space designed for focused learning, creativity, and making music.</p>
+    <div class="studio-details">
+      <span>Summerlin, Las Vegas</span>
+      <span>Private one-on-one lessons</span>
+    </div>
   </div>
 </section>
 
