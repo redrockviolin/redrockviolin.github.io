@@ -233,6 +233,30 @@ h1{
   font-weight:500;
 }
 
+
+.jane-text-only{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:clamp(52px,8vw,110px);
+  align-items:start;
+  max-width:1220px;
+}
+.jane-statement p{
+  margin:0;
+  max-width:520px;
+  font-family:"Libre Caslon Display",Georgia,serif;
+  font-size:clamp(36px,4vw,52px);
+  line-height:1.08;
+  letter-spacing:-.025em;
+  color:var(--rust);
+}
+.jane-bio{
+  padding-top:4px;
+}
+.jane-bio .body-copy{
+  max-width:680px;
+}
+
 /* ---------- REST OF SITE ---------- */
 .section{
   padding:92px clamp(34px,7vw,120px);
@@ -352,6 +376,8 @@ footer{
 
 /* ---------- MOBILE ---------- */
 @media(max-width:850px){
+  .jane-text-only{grid-template-columns:1fr;gap:30px}
+
   .jane-layout{grid-template-columns:1fr;gap:34px}
   .jane-photo-wrap{max-width:520px}
   .jane-credentials{grid-template-columns:1fr;gap:14px}
@@ -446,13 +472,12 @@ footer{
 
 <section class="section" id="jane">
   <p class="kicker">Meet Jane</p>
-  <div class="jane-layout">
-    <div class="jane-photo-wrap">
-      <img class="jane-photo" src="assets/jane-portrait-v12.jpg" alt="Jane, violin instructor at Red Rock Violin">
+  <div class="jane-text-only">
+    <div class="jane-statement">
+      <p>Every student deserves an approach that’s as individual as they are.</p>
     </div>
 
-    <div class="jane-copy">
-      <p class="lead">Every student deserves an approach that’s as individual as they are.</p>
+    <div class="jane-bio">
       <div class="body-copy">
         <p>My lessons are designed to build strong technique while nurturing confidence, creativity, and a genuine connection to music.</p>
         <p>I’m a Suzuki-trained violinist with a Bachelor of Music from New York University and more than a decade of professional performance experience, including national touring as an acoustic and electric violinist.</p>
