@@ -167,6 +167,72 @@ h1{
   pointer-events:none;
 }
 
+
+/* ---------- MEET JANE ---------- */
+#jane{
+  background:var(--paper);
+}
+.jane-layout{
+  display:grid;
+  grid-template-columns:minmax(280px,.78fr) minmax(0,1.22fr);
+  gap:clamp(44px,7vw,92px);
+  align-items:start;
+  max-width:1220px;
+}
+.jane-photo-wrap{
+  position:relative;
+}
+.jane-photo{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  object-position:center 42%;
+  border-radius:2px;
+}
+.jane-photo-wrap::after{
+  content:"";
+  position:absolute;
+  left:18px;
+  right:-18px;
+  bottom:-18px;
+  height:1px;
+  background:var(--rust);
+  opacity:.55;
+}
+.jane-copy .lead{
+  margin:0 0 26px;
+  font-family:"Libre Caslon Display",Georgia,serif;
+  font-size:clamp(32px,3.8vw,48px);
+  line-height:1.08;
+  color:var(--rust);
+}
+.jane-copy .body-copy{
+  max-width:690px;
+}
+.jane-credentials{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  margin-top:42px;
+  padding-top:22px;
+  border-top:1px solid var(--line);
+}
+.jane-credentials div{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+}
+.jane-credentials span{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  color:var(--muted);
+}
+.jane-credentials strong{
+  font-size:15px;
+  font-weight:500;
+}
+
 /* ---------- REST OF SITE ---------- */
 .section{
   padding:92px clamp(34px,7vw,120px);
@@ -286,6 +352,10 @@ footer{
 
 /* ---------- MOBILE ---------- */
 @media(max-width:850px){
+  .jane-layout{grid-template-columns:1fr;gap:34px}
+  .jane-photo-wrap{max-width:520px}
+  .jane-credentials{grid-template-columns:1fr;gap:14px}
+
   header{
     grid-template-columns:1fr auto;
     min-height:110px;
@@ -376,17 +446,33 @@ footer{
 
 <section class="section" id="jane">
   <p class="kicker">Meet Jane</p>
-  <div class="two-col">
-    <div class="lead">Every student deserves an approach that’s as individual as they are.</div>
-    <div class="body-copy">
-      <p>My lessons are designed to build strong technique while nurturing confidence, creativity, and a genuine connection to music.</p>
-      <p>I’m a Suzuki-trained violinist with a Bachelor of Music from New York University and more than a decade of professional performance experience, including national touring as an acoustic and electric violinist.</p>
+  <div class="jane-layout">
+    <div class="jane-photo-wrap">
+      <img class="jane-photo" src="assets/jane-portrait-v12.jpg" alt="Jane, violin instructor at Red Rock Violin">
     </div>
-  </div>
-  <div class="credential-row">
-    <span>NYU Bachelor of Music</span>
-    <span>Suzuki-trained</span>
-    <span>10+ years professional performance</span>
+
+    <div class="jane-copy">
+      <p class="lead">Every student deserves an approach that’s as individual as they are.</p>
+      <div class="body-copy">
+        <p>My lessons are designed to build strong technique while nurturing confidence, creativity, and a genuine connection to music.</p>
+        <p>I’m a Suzuki-trained violinist with a Bachelor of Music from New York University and more than a decade of professional performance experience, including national touring as an acoustic and electric violinist.</p>
+      </div>
+
+      <div class="jane-credentials">
+        <div>
+          <span>Education</span>
+          <strong>NYU Bachelor of Music</strong>
+        </div>
+        <div>
+          <span>Training</span>
+          <strong>Suzuki-trained</strong>
+        </div>
+        <div>
+          <span>Experience</span>
+          <strong>National touring violinist</strong>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
