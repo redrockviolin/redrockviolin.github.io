@@ -18,9 +18,13 @@
   --line:#d9cdbf;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+  overflow-x:hidden;
+}
 body{
   margin:0;
+  overflow-x:hidden;
   background:var(--paper);
   color:var(--charcoal);
   font-family:"DM Sans",Arial,sans-serif;
@@ -72,6 +76,7 @@ nav a:hover::after{right:0;}
   border-top:1px solid rgba(217,205,191,.25);
 }
 .hero-copy{
+  min-width:0;
   padding:64px 54px 50px clamp(34px,7vw,120px);
   display:flex;
   flex-direction:column;
@@ -103,10 +108,12 @@ h1{
   width:max-content;
 }
 .hero-image{
+  min-width:0;
+  overflow:hidden;
   min-height:535px;
   background:
     linear-gradient(90deg,rgba(247,242,234,.12),rgba(247,242,234,0) 18%),
-    url('assets/hero-v9.jpg') center/cover no-repeat;
+    url('assets/hero-clean-v18.jpg') 48% center/cover no-repeat;
 }
 
 /* ---------- INTRO / CTA ---------- */
@@ -456,6 +463,30 @@ footer{
 }
 
 /* ---------- MOBILE ---------- */
+@media(max-width:1150px){
+  header{
+    grid-template-columns:minmax(220px,270px) 1fr;
+    gap:28px;
+    padding-left:42px;
+    padding-right:42px;
+  }
+  .logo img{width:255px}
+  nav{gap:30px;font-size:17px}
+  .hero{
+    grid-template-columns:.9fr 1.1fr;
+  }
+  .hero-copy{
+    padding-left:42px;
+    padding-right:36px;
+  }
+  h1{
+    font-size:clamp(42px,5vw,58px);
+  }
+  .hero-copy p{
+    font-size:17px;
+  }
+}
+
 @media(max-width:850px){
   .studio-section{grid-template-columns:1fr}
   .studio-photo{min-height:390px}
@@ -479,7 +510,10 @@ footer{
   .hero-copy{padding:52px 24px 40px}
   h1{font-size:44px}
   .hero-copy p{font-size:18px}
-  .hero-image{min-height:320px}
+  .hero-image{
+    min-height:320px;
+    background-position:center center;
+  }
   .intro-copy{padding:54px 24px}
   .intro h2{font-size:39px}
   .music-image{min-height:300px}
