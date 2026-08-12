@@ -725,6 +725,59 @@ footer{
   }
 }
 
+
+/* V25 — rebuilt Lessons section */
+.lessons-section{
+  padding-top:64px !important;
+  padding-bottom:68px !important;
+}
+.lessons-section .lessons-header{
+  display:grid;
+  grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);
+  gap:54px;
+  align-items:end;
+  margin:0 0 34px;
+}
+.lessons-section .lessons-header h2{
+  margin:0 !important;
+  max-width:720px;
+  font-size:clamp(38px,3.8vw,52px);
+  line-height:1.08;
+}
+.lessons-section .lesson-lengths{
+  margin:0 0 6px !important;
+  font-size:17px;
+  line-height:1.5;
+  color:var(--muted);
+}
+.lessons-section .lesson-grid{
+  margin-top:0 !important;
+}
+.lessons-section .lesson-grid article{
+  padding-top:28px !important;
+  padding-bottom:28px !important;
+}
+.lessons-section .location-grid{
+  margin-top:30px !important;
+}
+@media(max-width:850px){
+  .lessons-section{
+    padding-top:52px !important;
+    padding-bottom:56px !important;
+  }
+  .lessons-section .lessons-header{
+    grid-template-columns:1fr;
+    gap:12px;
+    margin-bottom:26px;
+  }
+  .lessons-section .lesson-lengths{
+    margin:0 !important;
+  }
+  .lessons-section .location-grid{
+    margin-top:24px !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -799,12 +852,10 @@ footer{
 
 <section class="section soft lessons-section">
   <p class="kicker">Lessons</p>
-  <div class="two-col">
+
+  <div class="lessons-header">
     <h2>Private violin lessons for ages 4–Adult.</h2>
     <p class="lesson-lengths">30, 45, and 60-minute lessons available.</p>
-    <div class="body-copy">
-      
-    </div>
   </div>
 
   <div class="lesson-grid">
