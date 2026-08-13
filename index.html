@@ -778,6 +778,33 @@ footer{
   }
 }
 
+
+/* V26 — supplied performance photo in Meet Jane */
+#jane .jane-layout-photo{
+  display:grid !important;
+  grid-template-columns:minmax(300px,.78fr) minmax(0,1.22fr) !important;
+  gap:clamp(44px,7vw,92px);
+  align-items:start;
+}
+#jane .jane-photo{
+  display:block !important;
+  width:100%;
+  aspect-ratio:4/5;
+  background:url('assets/jane-performance-v26.jpg') center 42%/cover no-repeat;
+}
+#jane .jane-bio{
+  min-width:0;
+}
+@media(max-width:850px){
+  #jane .jane-layout-photo{
+    grid-template-columns:1fr !important;
+    gap:32px;
+  }
+  #jane .jane-photo{
+    max-width:520px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -821,11 +848,8 @@ footer{
 
 <section class="section" id="jane">
   <p class="kicker">Meet Jane</p>
-  <div class="jane-text-only">
-    <div class="jane-statement">
-      <p>Bow control, rhythm, tone, and technique built step by step.</p>
-    </div>
-
+  <div class="jane-layout jane-layout-photo">
+    <div class="jane-photo" role="img" aria-label="Jane performing violin on stage"></div>
     <div class="jane-bio">
       <div class="body-copy">
         <p>My lessons are designed to build strong technique while nurturing confidence, creativity, and a genuine connection to music.</p>
